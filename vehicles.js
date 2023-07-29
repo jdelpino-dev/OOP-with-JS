@@ -1,15 +1,9 @@
-/**
- * Vehicle Class.
- * @class
- */
+/** Class representing a Vehicle. */
 class Vehicle {
-  /** Constructor */
-
   /**
-   * * Create a point.
    * * @param {string} make - vehicle's brand
-   * * @param {string} model - vehicle's model
-   * * @param {number} year - vehicle's year
+   * * @param {string} model
+   * * @param {number} year
    */
   constructor(make, model, year) {
     this.make = make;
@@ -17,73 +11,74 @@ class Vehicle {
     this.year = year;
   }
 
-  /** Public Methods */
-
-  /**
-   * @returns {string} - A description of the vehicle
-   */
+  /** Returns a string representing the vehicle's honk */
   honk() {
     return "Beep.";
   }
 
+  /**
+   * Returns a string with a human readable description of the vehicle.
+   * @returns {string}
+   * */
   toString() {
     return `The vehicle is a ${this.make} ${this.model} from ${this.year}.`;
   }
 }
 
 /**
- * Car Class. It represents a car inheriting from the Vehicle class.
- * It has a default ptoperty of number of wheels equal to 4.
- * @class
+ * Class representing a Car.
  */
 class Car extends Vehicle {
-  /** Constructor */
-
   /**
-   * Uses the Vehicle constructor to create a new car and
-   * adds a property of number of wheels with a default value of 4.
+   * Inherited parameters from Vehicle class:
+   * @param {string} make
+   * @param {string} model
+   * @param {number} year
    */
-  constructor(make, model) {
-    super(make, model);
+  constructor(make, model, year) {
+    super(make, model, year);
+    /** @property {number} numWheels - The number of wheels for a car */
     this.numWheels = 4;
   }
 
-  /** Public Methods */
-
   /**
-   * Overrides the parent method toString piggybacking and altering its output.
+   * Returns a description of the car.
    * @returns {string}
    */
   toString() {
-    return super().toString + " It's a car.";
+    return super.toString() + " It's a car.";
   }
 }
 
 /**
- * Motorcycle Class. It represents a motorcycle inheriting from the Vehicle class.
- * It has a default property of number of wheels equal to 2 and
- * method call revEngine.
- * @class
+ * Class representing a Motorcycle, a type of Vehicle with 2 wheels.                               (default is 2).
  */
-class Car extends Vehicle {
-  /** Constructor */
-
+class Motorcycle extends Vehicle {
   /**
-   * Uses the Vehicle constructor to create a new car and
-   * adds a property of number of wheels with a default value of 4.
+   * Inherited parameters from Vehicle class:
+   * @param {string} make
+   * @param {string} model
+   * @param {number} year
    */
-  constructor(make, model) {
-    super(make, model);
+  constructor(make, model, year) {
+    super(make, model, year);
+    /** @property {number} numWheels - The number of wheels for a motorcycle */
     this.numWheels = 2;
   }
 
-  /** Public Methods */
-
   /**
-   * Overrides the parent method toString piggybacking and altering its output.
+   * Returns a description of the motorcycle.
    * @returns {string}
    */
   toString() {
-    return super().toString + " It's a motorcycle.";
+    return super.toString() + " It's a motorcycle.";
+  }
+
+  /**
+   * Returns a string representing the engines's reving sound.
+   * @returns {string}
+   * */
+  revEngine() {
+    return "VROOM!!!";
   }
 }
