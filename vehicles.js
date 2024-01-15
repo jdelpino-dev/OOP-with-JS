@@ -1,3 +1,5 @@
+/** OOP Excercise */
+
 /** Class representing a Vehicle. */
 class Vehicle {
   /** Creates a new vehicle.
